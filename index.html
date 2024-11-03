@@ -5,8 +5,8 @@
     <title>Сайт-резюме</title>
     <style>
         body {
-            background-color: #2c3e50;
-            color: #f2f2f2;
+            background-color: #4682B4;
+            color: #2c3e50;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -22,7 +22,7 @@
             padding: 20px;
         }
         .section {
-            background-color: #34495e;
+            background-color: #f2f2f2;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -30,39 +30,39 @@
         p {
             line-height: 1.6;
         }
-        .large-text {
-            font-size: 1.5em;
-        }
-        .education-text {
+        .large-text, .education-text {
             font-size: 1.5em;
         }
         .education-section {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         .education-info {
             width: 70%;
         }
         .education-photo {
-            width: 60%;
-            text-align: left;
+            width: 25%;
+            text-align: center;
         }
         .education-photo img {
-            max-width: 80%;
+            width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 10px;
-            filter: brightness(0);
+            filter: brightness(0.9);
         }
         .contacts-section {
             text-align: center;
         }
         .icon-links {
             margin-top: 20px;
-        }
-        .icon-links a {
-            margin: 0 10px;
-            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .icon-links img {
             width: 50px;
@@ -74,7 +74,7 @@
             margin-top: 20px;
         }
         table, th, td {
-            border: 1px solid #f2f2f2;
+            border: 1px solid #2c3e50;
         }
         th, td {
             padding: 10px;
@@ -82,12 +82,13 @@
         }
         th {
             background-color: #2c3e50;
+            color: #f2f2f2;
         }
         .skill {
             margin-bottom: 15px;
         }
         .skill-name {
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
         .skill-bar {
             width: 100%;
@@ -96,8 +97,25 @@
         }
         .skill-level {
             height: 25px;
-            background-color: #3498db;
             border-radius: 10px;
+        }
+        .skill-level-python {
+            background-color: #306998;
+        }
+        .skill-level-cpp {
+            background-color: #00599C;
+        }
+        .skill-level-csharp {
+            background-color: #68217A;
+        }
+        .skill-level-scala {
+            background-color: #DC322F;
+        }
+        .skill-level-html {
+            background-color: #E34C26;
+        }
+        html {
+            scroll-behavior: smooth;
         }
         nav {
             background-color: #34495e;
@@ -112,6 +130,57 @@
         }
         nav a:hover {
             color: #3498db;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                width: 95%;
+                padding: 10px;
+            }
+            .education-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .education-info {
+                width: 100%;
+                text-align: center;
+            }
+            .education-photo {
+                 width: 35%;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            .large-text {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            .skill-name {
+                font-size: 1.2em;
+            }
+            .icon-links img {
+                width: 40px;
+                height: 40px;
+            }
+            .skill-level {
+                height: 20px;
+            }
         }
     </style>
 </head>
@@ -135,31 +204,35 @@
             <div class="skill">
                 <div class="skill-name">Python</div>
                 <div class="skill-bar">
-                    <div class="skill-level" style="width: 75%;"></div>
+                    <div class="skill-level skill-level-python" style="width: 75%;"></div>
                 </div>
             </div>
+
             <div class="skill">
                 <div class="skill-name">C++</div>
                 <div class="skill-bar">
-                    <div class="skill-level" style="width: 60%;"></div>
+                    <div class="skill-level skill-level-cpp" style="width: 60%;"></div>
                 </div>
             </div>
+
             <div class="skill">
                 <div class="skill-name">C#</div>
                 <div class="skill-bar">
-                    <div class="skill-level" style="width: 50%;"></div>
+                    <div class="skill-level skill-level-csharp" style="width: 50%;"></div>
                 </div>
             </div>
+
             <div class="skill">
                 <div class="skill-name">Scala</div>
                 <div class="skill-bar">
-                    <div class="skill-level" style="width: 40%;"></div>
+                    <div class="skill-level skill-level-scala" style="width: 40%;"></div>
                 </div>
             </div>
+
             <div class="skill">
                 <div class="skill-name">HTML та CSS</div>
                 <div class="skill-bar">
-                    <div class="skill-level" style="width: 20%;"></div>
+                    <div class="skill-level skill-level-html" style="width: 20%;"></div>
                 </div>
             </div>
 
@@ -174,19 +247,19 @@
                 </tr>
                 <tr>
                     <td>C++</td>
-                    <td>Початковий рівень, 1 рік</td>
+                    <td>Середній рівень, 1 рік</td>
                 </tr>
                 <tr>
                     <td>C#</td>
-                    <td>Початковий рівень, 8 місяців</td>
-                </tr>
-                <tr>
-                    <td>Scala</td>
                     <td>Початковий рівень, 6 місяців</td>
                 </tr>
                 <tr>
+                    <td>Scala</td>
+                    <td>Початковий рівень, 5 місяців</td>
+                </tr>
+                <tr>
                     <td>HTML та CSS</td>
-                    <td>Початковий рівень, 1 місяць</td>
+                    <td>Початковий рівень, 2 місяці</td>
                 </tr>
             </table>
         </section>
@@ -198,20 +271,27 @@
                     <img src="https://www.kspu.edu/Images/MAIN%20LOGO%20blue.png" alt="Херсонський державний університет">
                 </div>
                 <div class="education-info">
-                    <p class="education-text">Навчаюся на третьому курсі Херсонського державного університету за спеціальністю «Інженерія програмного забезпечення». На даний момент у зв'язку з війною колектив університету знаходиться в Івано-Франківську в одному з корпусів Прикарпатського національного університету імені Василя Стефаника.</p>
+                    <p class="education-text">Навчаюся на третьому курсі Херсонського державного університету за спеціальністю «Інженерія програмного забезпечення». На даний момент у зв'язку з війною колектив університету знаходиться в Івано-Франківську.</p>
                 </div>
             </div>
         </section>
+
         <section id="contacts" class="section contacts">
             <h2>Контакти</h2>
             <div class="contacts-section">
                 <p class="large-text">Для всіх, хто вирішив зі мною поспілкуватися, я залишив тут свої контакти.</p>
                 <div class="icon-links">
                     <a href="https://t.me/Iubitel_ChaYa" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/80px-Telegram_2019_Logo.svg.png" alt="Telegram">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram">
                     </a>
                     <a href="https://wa.me/380663962146" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/150px-WhatsApp.svg.png" alt="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/150px-WhatsApp.svg.png" alt="WhatsApp">
+            </a>
+            <a href="https://github.com/Kulman-Denis" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 50px; height: 50px;">
+            </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
                     </a>
                 </div>
             </div>
