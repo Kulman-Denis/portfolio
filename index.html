@@ -5,28 +5,82 @@
     <title>Сайт-резюме</title>
     <style>
         body {
-            background-color: #4682B4;
-            color: #2c3e50;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #000000;
-            font-weight: bold;
-        }
+    background-color: #4682B4;
+    color: #2c3e50;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+.intro {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    width: 75%;
+    margin: 20px auto 0 auto;
+    padding: 25px;
+}
+
+.intro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.intro-text h1, .intro-text h2 {
+    margin: 5px 0;
+    text-align: left;
+}
         .content {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .section {
-            background-color: #f2f2f2;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-size: 1.1em;
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.skill-level {
+    height: 25px;
+    border-radius: 10px;
+}
+
+.skill-level-python { background-color: #306998; }
+.skill-level-cpp { background-color: #00599C; }
+.skill-level-csharp { background-color: #68217A; }
+.skill-level-scala { background-color: #DC322F; }
+.skill-level-html { background-color: #E34C26; }
         p {
             line-height: 1.6;
         }
@@ -132,37 +186,39 @@
             color: #3498db;
         }
 
-        @media (max-width: 768px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    .content {
+        width: 95%;
+        padding: 10px;
+    }
+    .education-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .education-info {
+        width: 100%;
+        text-align: center;
+    }
+    .education-photo {
+        width: 35%;
+    }
+    .large-text {
+        font-size: 1.5em;
+    }
+    .intro-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-        @media (max-width: 768px) {
-            .content {
-                width: 95%;
-                padding: 10px;
-            }
-            .education-section {
-                flex-direction: column;
-                align-items: center;
-            }
-            .education-info {
-                width: 100%;
-                text-align: center;
-            }
-            .education-photo {
-                 width: 35%;
-            }
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-            .large-text {
-                font-size: 1.5em;
-            }
-        }
+    .intro-container {
+        flex-direction: column;
+    }
+}
 
         @media (max-width: 480px) {
             h1 {
@@ -190,11 +246,17 @@
         <a href="#education">Освіта</a>
         <a href="#contacts">Контакти</a>
     </nav>
-
-    <header>
-        <h1>Привіт, я Кульман Денис</h1>
-        <h2>Студент з України</h2>
-    </header>
+<div class="intro">
+    <div class="intro-container">
+        <div class="intro-photo">
+            <img src="photo.jpg" alt="Кульман Денис">
+        </div>
+        <div class="intro-text">
+            <h1>Кульман Денис</h1>
+            <h2>Студент з України</h2>
+        </div>
+    </div>
+</div>
 
     <div class="content">
         <section id="skills" class="section skills">
@@ -259,7 +321,7 @@
                 </tr>
                 <tr>
                     <td>HTML та CSS</td>
-                    <td>Початковий рівень, 2 місяці</td>
+                    <td>Початковий рівень, 3 місяці</td>
                 </tr>
             </table>
         </section>
