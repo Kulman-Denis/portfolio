@@ -61,10 +61,6 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
-.skill-name {
-    font-size: 1.1em;
-}
-
 .skill-bar {
     width: 100%;
     background-color: #ccc;
@@ -75,12 +71,6 @@ h1, h2 {
     height: 25px;
     border-radius: 10px;
 }
-
-.skill-level-python { background-color: #306998; }
-.skill-level-cpp { background-color: #00599C; }
-.skill-level-csharp { background-color: #68217A; }
-.skill-level-scala { background-color: #DC322F; }
-.skill-level-html { background-color: #E34C26; }
         p {
             line-height: 1.6;
         }
@@ -112,16 +102,31 @@ h1, h2 {
             text-align: center;
         }
         .icon-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
         .icon-links img {
             width: 50px;
             height: 50px;
         }
+.icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+.icon:hover {
+    transform: scale(1.2);
+}
         table {
             width: 100%;
             border-collapse: collapse;
@@ -342,20 +347,24 @@ h1, h2 {
             <h2>Контакти</h2>
             <div class="contacts-section">
                 <p class="large-text">Для всіх, хто вирішив зі мною поспілкуватися, я залишив тут свої контакти.</p>
-                <div class="icon-links">
-                    <a href="https://t.me/Iubitel_ChaYa" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram">
-                    </a>
-                    <a href="https://wa.me/380663962146" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/150px-WhatsApp.svg.png" alt="WhatsApp">
-            </a>
-            <a href="https://github.com/Kulman-Denis" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 50px; height: 50px;">
-            </a>
-                    <a href="https://www.linkedin.com" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
-                    </a>
-                </div>
+                    <div class="icon-links">
+        <a href="https://t.me/Iubitel_ChaYa" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" 
+                 alt="Telegram" class="icon">
+        </a>
+        <a href="https://wa.me/380663962146" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/150px-WhatsApp.svg.png" 
+                 alt="WhatsApp"style="width: 64px; height: 64px;" class="icon">
+        </a>
+        <a href="https://github.com/Kulman-Denis" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" 
+                 alt="GitHub" class="icon">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
+                 alt="LinkedIn" class="icon">
+        </a>
+    </div>
             </div>
         </section>
     </div>
